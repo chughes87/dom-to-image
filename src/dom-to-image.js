@@ -133,9 +133,17 @@
             });
 
         function newCanvas(domNode) {
+
+        function newCanvas(domNode) {
             var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+
             canvas.width = options.width || domNode.scrollWidth;
             canvas.height = options.height || domNode.scrollHeight;
+
+            ctx.fillStyle = options.bgcolor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             return canvas;
         }
     }
